@@ -1,0 +1,58 @@
+.icon-menu {
+	display: none;
+	width: rem(24);
+	height: rem(24);
+	align-items: center;
+	justify-content: center;
+	@media (max-width: $mobile) {
+		display: flex;
+	}
+
+	&.js-open {
+		.icon-menu__content {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: 50%;
+				width: 100%;
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 2px);
+			}
+		}
+	}
+
+	&__content {
+		display: block;
+		position: relative;
+		width: rem(17);
+		height: rem(11);
+		cursor: pointer;
+
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			height: 2px;
+			background-color: #485C8D;
+		}
+		&::before {
+			top: 0;
+			width: 50%;
+		}
+		&::after {
+			bottom: 0;
+			width: 100%;
+		}
+		span {
+			top: 50%;
+			width: 75%;
+		}
+	}
+}

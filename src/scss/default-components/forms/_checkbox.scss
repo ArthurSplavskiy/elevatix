@@ -1,0 +1,57 @@
+// <div class="checkbox">
+// 	<label class="checkbox__text">
+// 		<input
+// 			checked
+// 			type="checkbox"
+// 			name="agreement"
+// 			class="checkbox__input"
+// 			data-required
+// 		>
+// 		<div class="icon-check"></div>
+// 		<span>ПРИЙМАЮ <a href="privacy-policy.html">УМОВИ</a>ОБРОБКИ ПЕРСОНАЛЬНИХ ДАНИХ</span>
+// 	</label>
+// </div>
+
+.checkbox {
+	position: relative;
+	cursor: pointer;
+
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		&:checked + .icon-check {
+			background: $white url("../img/interface/checkbox.svg") center no-repeat;
+		}
+	}
+	.icon-check {
+		content: "";
+		align-self: flex-start;
+		margin: 0px 8px 0px 0px;
+		flex: 0 0 24px;
+		left: 0;
+		top: 0;
+		width: 24px;
+		height: 24px;
+		background: transparent;
+		border: 1px solid #1A95AD;
+	}
+	&__text {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 18px;
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+		transition: border-color 0.3s ease;
+		color: #202223;
+		&._error {
+			.icon-check {
+				border-color: $red;
+			}
+		}
+	}
+}

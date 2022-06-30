@@ -1,0 +1,58 @@
+.form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+
+	@media (max-width: $mobile) {
+		grid-template-columns: 1fr;
+	}
+
+    &__item {
+        position: relative;
+        transition: all $defaultTransition;
+
+        &._error {
+            input {
+                border-color: $red;
+            }
+        }
+        &._focus {
+            //border-color: $primary1;
+        }
+
+        input, textarea {
+            height: 50px;
+			border: 1px solid #D2D5D8;
+			border-radius: 8px;
+            width: 100%;
+            background: #F2F9FB;
+			padding: 18.5px 15px;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 18px;
+
+            @include placeholder-content {
+				color: #8C9196;
+            }
+        }
+        textarea {
+            height: 107px;
+        }
+    }
+    &__textarea, .checkbox {
+        grid-column: 1 / -1;
+    }
+	.button {
+		margin-top: 10px;
+	}
+    // * ERROR
+    &__error {
+        color: $red;
+        position: absolute;
+        top: 110%;
+        font-size: rem(12);
+    }
+}
+
+@import "checkbox";
+@import "select";
