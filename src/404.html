@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+		"title":"Elevatix"
+	})
+	<body>
+		@@include('html/_preloader-html.htm',{})
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page page_404">
+				<div class="notfound">
+					<div class="notfound__content">
+						<img src="img/blob.svg" alt="404">
+						<h1>404</h1>
+						<p>Ooops, sorry, but this page was not found(</p>
+						<a href="index.html" class="button">Homepage</a>
+					</div>
+					<img src="img/form-animal.svg" alt="404" class="notfound__animal">
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+			@@include('html/_js.htm',{})
+		</div>
+	</body>
+</html>

@@ -1,6 +1,7 @@
 // Импорт функционала ==============================================================================================================================================================================================================================================================================================================================
 // Вспомогательные функции
 import { _slideUp, _slideDown, _slideToggle, setPhoneMask, setDateMask } from "../utils/functions.js";
+import { popup } from "../../index.js";
 // Модуль попапа
 // import { popupItem } from "../utils/popups.js";
 // Модуль прокрутки к блоку
@@ -184,7 +185,7 @@ export let formValidate = {
 				const select = selects[index];
 				const select_default_value = select.getAttribute('data-default');
 				select.value = select_default_value;
-				select_item(select);
+				//select_item(select);
 			}
 		}
 		// float label
@@ -251,7 +252,7 @@ export function formSubmit(validate) {
 					form.classList.remove('_sending');
 					if (message) {
 						// Нужно подключить зависимость
-						popupItem.open(`${message}`);
+						popup.open(`${message}`);
 					}
 					formValidate.formClean(form);
 				} else {
@@ -264,7 +265,7 @@ export function formSubmit(validate) {
 				e.preventDefault();
 				if (message) {
 					// Нужно подключить зависимость
-					popupItem.open(`${message}`);
+					popup.open(`${message}`);
 				}
 				formValidate.formClean(form);
 			}

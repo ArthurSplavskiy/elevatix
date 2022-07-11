@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	@@include('html/_head.htm',{
+		"title":"Elevatix"
+	})
+	<body>
+		<div class="rootpage">
+			<h1>Front-end Elevatix</h1>
+			<h6>Pages:</h6>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="index.html">Main</a></li>
+				<li><a target="_blank" href="about.html">About</a></li>
+				<li><a target="_blank" href="how-it-work.html">How it work</a></li>
+				<li><a target="_blank" href="privacy-policy.html">Privacy Policy</a></li>
+				<li><a target="_blank" href="404.html">404</a></li>
+			</ol>
+			<button>Попап</button>
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+		<script>
+			const popup = {
+				open(selector) {
+					document.querySelector(selector).classList.add('_open');
+				},
+				close(e, selector) {
+					e.target.closest(selector).closest('.popup').classList.remove('_open');
+				}
+			};
+			const clickOnDocument = (e) => {
+				const targetElement = e.target;
+				if (targetElement.closest('.popup__close')) {
+					popup.close(e, '.popup__close');
+				}
+				if (targetElement.closest('.popup') && !targetElement.closest('.popup__content')) {
+					popup.close(e, '.popup');
+				}
+			};
+			document.querySelector('button').onclick = () => popup.open('.popup');
+
+			document.addEventListener('click', clickOnDocument)
+		</script>
+	</body>
+	
+	<style>
+		* ,*::before, *::after {
+			padding: 0px;
+			margin: 0px;
+			border: 0px;
+			box-sizing: border-box; 
+		}
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			min-width: 320px;
+			width: 100%;
+			color: #000;
+		}
+		body {
+			font-size: 100%;
+			line-height: 1;
+			font-size: 1rem;
+			padding: 20px;
+		}
+		h1 {
+			font-size: 48px;
+			font-weight: 700;
+			margin-bottom: 40px;
+		}
+		h6 {
+			font-size: 28px;
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+		ol {
+			margin: 30px;
+			font-size: 28px;
+		}
+		li {
+			margin-bottom: 10px;
+		}
+		a {
+			color: #47749E;
+			text-decoration: underline!important;
+		}
+		a:hover {
+			text-decoration: none!important;
+		}
+		button {
+			border: 1px solid #000;
+			padding: 10px 20px;
+		}
+	</style>
+</html>

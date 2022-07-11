@@ -137,7 +137,7 @@
 									</span>
 									<div class="tag">Try for free</div>
 								</div>
-								<form class="form" action="#" data-message="[data-popup='successPopup']" data-test>
+								<form class="form" action="#" data-message=".popup-reset" data-test>
 									<fieldset class="form__item">
 										<input type="text" name="firstName" placeholder="Name">
 									</fieldset>
@@ -169,12 +169,13 @@
 									<img class="form-block__animal" src="img/form-animal.svg" alt="Elevatix">
 								</form>
 							</div>
-							<img data-fromRight="0.5" class="form-block__animal" src="img/form-animal.svg" alt="Elevatix">
-							<img data-fromRight="0.7" class="form-block__x" src="img/form-x.svg" alt="Elevatix">
+							<img data-fromRightForm="0.5" class="form-block__animal" src="img/form-animal.svg" alt="Elevatix">
+							<img data-fromRightForm="0.7" class="form-block__x" src="img/form-x.svg" alt="Elevatix">
 						</div>
 					</div>
 				</section>
 			</main>
+			@@include('html/_popup.htm',{})
 			@@include('html/_footer.htm',{})
 			@@include('html/_js.htm',{})
 		</div>

@@ -166,11 +166,35 @@ body {
 }
 
 [data-fromLeft] {
-	transition: all 1s ease-out;
-	transform: translate3d(-100%, 0, 0);
+	transition: opacity 1s ease-in;
+	//transform: translate3d(-100%, 0, 0);
 	will-change: width;
 	opacity: 0;
-	will-change: transform, opacity;
+	will-change: opacity;
+
+	&.is-view {
+		//transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+[data-fromRight] {
+	transition: opacity 1s ease-out;
+	//transform: translate3d(100%, 0, 0);
+	opacity: 0;
+	will-change: opacity;
+
+	&.is-view {
+		//transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+[data-fromRightForm] {
+	transition: all 1s ease-out;
+	transform: translate3d(100%, 0, 0);
+	opacity: 0;
+	will-change: opacity, transform;
 
 	&.is-view {
 		transform: translate3d(0, 0, 0);
@@ -178,12 +202,11 @@ body {
 	}
 }
 
-[data-fromRight] {
+[data-fromLeftForm] {
 	transition: all 1s ease-out;
-	transform: translate3d(100%, 0, 0);
-	will-change: width;
+	transform: translate3d(-100%, 0, 0);
 	opacity: 0;
-	will-change: transform, opacity;
+	will-change: opacity, transform;
 
 	&.is-view {
 		transform: translate3d(0, 0, 0);
@@ -205,6 +228,18 @@ body {
 
 @for $i from 1 through 9 {
 	[data-fromRight="0.#{$i}"] {
+		transition-delay: ($i / 10) + s;
+	}
+}
+
+@for $i from 1 through 9 {
+	[data-fromRightForm="0.#{$i}"] {
+		transition-delay: ($i / 10) + s;
+	}
+}
+
+@for $i from 1 through 9 {
+	[data-fromLeftForm="0.#{$i}"] {
 		transition-delay: ($i / 10) + s;
 	}
 }

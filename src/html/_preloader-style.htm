@@ -11,11 +11,23 @@
         z-index: 9999;
         background-color: #485C8D;
         pointer-events: none;
+		will-change: transform;
+		transition: transform 1s ease-in 1.8s;
     }
 	.page-preloader img, 
 	.page-preloader svg {
 		transform: scale(0);
 		opacity: 0;
 		max-width: 100px;
+		will-change: transform, opacity;
+		transition: all 2s ease;
+	}
+	.loaded .page-preloader img, 
+	.loaded .page-preloader svg {
+		transform: scale(2);
+		opacity: 1;
+	}
+	.loaded .page-preloader {
+		transform: translateY(-100%);
 	}
 </style>

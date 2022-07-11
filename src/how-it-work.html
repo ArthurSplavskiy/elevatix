@@ -67,30 +67,30 @@
 						<div class="timeline">
 							<div class="timeline__desktop">
 								<div class="timeline__top">
-									<div data-fromLeft>
+									<div data-fromLeftForm>
 										<span>01</span>
 										<p>Download the latest Elevatix SDK that includes the newest features and improvements</p>
 									</div>
-									<div data-fromLeft="0.1">
+									<div data-fromLeftForm="0.1">
 										<span>03</span>
 										<p>Initialize it with your secret data and enable plugin</p>
 									</div>
-									<div data-fromLeft="0.2">
+									<div data-fromLeftForm="0.2">
 										<span>05</span>
 										<p>Monitor integration</p>
 									</div>
 								</div>
 								<img src="img/interface/t.svg" alt="Elevatix">
 								<div class="timeline__bottom">
-									<div data-fromRight>
+									<div data-fromRightForm>
 										<span>02</span>
 										<p>Import as a Unity package to your project</p>
 									</div>
-									<div data-fromRight="0.1">
+									<div data-fromRightForm="0.1">
 										<span>04</span>
 										<p>Set up business events for metrics-tracking in the project</p>
 									</div>
-									<div data-fromRight="0.2">
+									<div data-fromRightForm="0.2">
 										<span>06</span>
 										<p>View and use Elevatix recommendations for payment strategies</p>
 									</div>
@@ -147,7 +147,7 @@
 						</div>
 						<section class="s-quote">
 							<div class="s-quote__content">
-								<img data-fromLeft src="img/human.png" alt="Elevatix" style="margin-bottom: -10px;">
+								<img src="img/human.png" alt="Elevatix" style="margin-bottom: -10px;">
 								<div class="quote">
 									<p>Elevatix brings you to the next level of data analytics and in-app purchase marketing campaigns.</p>
 									<span class="quote__name">Robert Henry</span>
@@ -163,7 +163,7 @@
 										<span> purchases for 10 k DAU</span>
 									</span>
 								</div>
-								<form class="form" action="#" data-message="[data-popup='successPopup']" data-test>
+								<form class="form" action="#" data-message=".popup-reset" data-test>
 									<fieldset class="form__item">
 										<input type="text" name="firstName" placeholder="Name">
 									</fieldset>
@@ -195,12 +195,13 @@
 									<img class="form-block__animal" src="img/form-animal.svg" alt="Elevatix">
 								</form>
 							</div>
-							<img data-fromRight="0.5" class="form-block__animal" src="img/form-animal.svg" alt="Elevatix">
-							<img data-fromRight="0.7" class="form-block__x" src="img/form-x.svg" alt="Elevatix">
+							<img data-fromRightForm="0.5" class="form-block__animal" src="img/form-animal.svg" alt="Elevatix">
+							<img data-fromRightForm="0.7" class="form-block__x" src="img/form-x.svg" alt="Elevatix">
 						</div>
 					</div>
 				</section>
 			</main>
+			@@include('html/_popup.htm',{})
 			@@include('html/_footer.htm',{})
 			@@include('html/_js.htm',{})
 		</div>

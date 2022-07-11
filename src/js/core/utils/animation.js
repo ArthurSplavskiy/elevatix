@@ -91,31 +91,6 @@ export const playFirstScene = (scene) => {
 		.add(setSvgWave(tableBorder2), 'start+=1.3')
 };
 
-export const playPreloaderAnimation = () => {
-	const $preloader = document.querySelector('.page-preloader');
-	const $preloaderLogo = $preloader.querySelector('img');
-	const $hero = document.querySelector('.hero');
-
-	const t = gsap.timeline({
-		defaults: {
-			duration: 1.8,
-			ease: 'power2.inOut'
-		},
-		delay: 0.5
-	})
-
-	if($preloader && $preloaderLogo) {
-		t
-			.addLabel('start')
-			.to($preloaderLogo, { scale: 2, opacity: 1 }, 'start')
-			.to($preloader, { yPercent: -100 }, 'start+=1.4')
-	}
-	
-	$hero && t.to($hero, {
-		onEnter: () => $hero.classList.add('is-view')
-	}, '-=0.5');
-};
-
 export class ScrollObserver {
     constructor (element = null, animationIn = null, animationOut = null, options = {}, reverse = false) {
         if(typeof element === 'string') {
